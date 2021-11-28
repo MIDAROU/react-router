@@ -1,3 +1,4 @@
+import Button from "@restart/ui/esm/Button";
 import React from "react";
 import ReactStars from "react-rating-stars-component";
 import { Link } from "react-router-dom";
@@ -29,7 +30,7 @@ function MovieCard({ Movies, input, rateFilter }) {
 				.map((movie, index) => {
 					return (
 						<div className="MovieCard" key={movie.id}>
-							<Link to={/Movie/ + movie.id} className="Card">
+							<div className="Card">
 								<img src={movie.posterURL} alt={movie.title} />
 								<div className="Details">
 									<h2 className="CardTitle">
@@ -37,7 +38,7 @@ function MovieCard({ Movies, input, rateFilter }) {
 									</h2>
 									<p className="CardDesc">{movie.description}</p>
 								</div>
-							</Link>
+							</div>
 							<div className="Rating">
 								<h3>Rating : </h3>
 								<ReactStars
@@ -49,6 +50,9 @@ function MovieCard({ Movies, input, rateFilter }) {
 									value={movie.rating}
 									activeColor="#ffd700"
 								/>
+								<Button className="btn" variant="primary">
+									<Link to={/Movie/ + movie.id}>MORE</Link>
+								</Button>
 							</div>
 						</div>
 					);

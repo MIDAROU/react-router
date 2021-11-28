@@ -1,3 +1,4 @@
+import Button from "react-bootstrap/Button";
 import React from "react";
 import { withRouter } from "react-router";
 function Movie({ Movies, match, history }) {
@@ -11,18 +12,24 @@ function Movie({ Movies, match, history }) {
 				return false;
 			}).map((movie) => (
 				<div className="main">
-					<button onClick={history.goBack}>BACK</button>
+					<Button className="btn" variant="primary" onClick={history.goBack}>
+						BACK
+					</Button>
+					<hr />
 					<h1>{movie.title}</h1>
 					<iframe
-						width="853"
-						height="480"
+						width="1000px"
+						height="800px"
 						src={movie.trailer}
 						frameBorder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowFullScreen
 						title="Embedded youtube"
 					/>
-					<p>{movie.description}</p>
+					<div>
+						<h2>DESCRIPTION :</h2>
+						<p>{movie.description}</p>
+					</div>
 				</div>
 			))}
 		</>

@@ -12,10 +12,10 @@ body {
 }
 main {
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	flex-wrap: wrap;
 	width: 95%;
-	margin: auto;
+	margin-left: 7%;
 }
 /*Styling Header*/
 header {
@@ -57,9 +57,6 @@ header input {
 }
 .Card {
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
 	max-width: 300px;
 	max-height: 500px;
 	margin: 10px;
@@ -68,16 +65,13 @@ header input {
 	object-fit: cover;
 	color: #fff;
 }
-.Card:hover {
-	box-shadow: 0 8px 16px 3px rgba(0, 0, 0, 0.6);
-	transform: translateY(-3px) scale(1.05) rotateX(15deg);
-	transition: all 0.1s ease-in-out;
-}
+
 .Card img {
 	z-index: 1;
 	position: relative;
 	min-width: 300px;
 	min-height: 500px;
+	border: 1px solid #000;
 }
 .Card:hover img {
 	filter: blur(8px);
@@ -121,7 +115,7 @@ header input {
 	padding-right: 15px;
 }
 .Stars {
-	transform: translateY(-1.5px);
+	transform: translateY(-5.5px);
 }
 /* Styling Movie description*/
 .main {
@@ -129,11 +123,26 @@ header input {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	padding: 50px;
+	align-self: center;
+}
+.main .btn {
+	align-self: flex-start;
+	margin-top: 15px;
+	margin-left: 5px;
+}
+.main hr {
+	width: 100%;
 }
 .main h1,
 .main iframe {
 	padding-bottom: 50px;
+}
+.main h2 {
+	align-self: start;
+}
+.main div {
+	width: 80%;
+	text-align: left;
 }
 /*Styling Form*/
 .form {
