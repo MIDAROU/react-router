@@ -2,6 +2,7 @@ import Button from "react-bootstrap/Button";
 import React from "react";
 import { withRouter } from "react-router";
 function Movie({ Movies, match, history }) {
+	console.log(history);
 	return (
 		<>
 			{Movies.filter((el) => {
@@ -12,6 +13,13 @@ function Movie({ Movies, match, history }) {
 				return false;
 			}).map((movie) => (
 				<div className="main">
+					<Button
+						className="btn"
+						variant="primary"
+						onClick={() => history.push("/")}
+					>
+						HOME
+					</Button>
 					<Button className="btn" variant="primary" onClick={history.goBack}>
 						BACK
 					</Button>
